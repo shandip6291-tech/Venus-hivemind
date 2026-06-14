@@ -21,3 +21,32 @@ const row1 =
         .setStyle(ButtonStyle.Secondary)
 
     );
+
+const row2 =
+  new ActionRowBuilder()
+    .addComponents(
+
+      new ButtonBuilder()
+        .setCustomId("ticket_adduser")
+        .setLabel("Add User")
+        .setEmoji("➕")
+        .setStyle(ButtonStyle.Success),
+
+      new ButtonBuilder()
+        .setCustomId("ticket_removeuser")
+        .setLabel("Remove User")
+        .setEmoji("➖")
+        .setStyle(ButtonStyle.Danger),
+
+      new ButtonBuilder()
+        .setCustomId("ticket_info")
+        .setLabel("Info")
+        .setEmoji("📊")
+        .setStyle(ButtonStyle.Secondary)
+
+    );
+
+await channel.send({
+  embeds: [embed],
+  components: [row1, row2]
+});
